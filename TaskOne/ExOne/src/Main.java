@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -6,14 +7,20 @@ public class Main {
 
     public static void main(String[] args){
 
-        System.out.println("Please enter two numbers: ");
-        int var1 = sc.nextInt();
-        int var2 = sc.nextInt();
+        try {
+            System.out.println("Please enter two numbers: ");
+            int var1 = sc.nextInt();
+            int var2 = sc.nextInt();
+            System.out.println("Before swap: " + var1 + " " +var2);
 
-        System.out.println("Before swap: " + var1 + " " +var2);
+            swapWithThirdVar(var1,var2);
+            swapWithXOr(var1,var2);
 
-        swapWithThirdVar(var1,var2);
-        swapWithXOr(var1,var2);
+        }catch (InputMismatchException e){
+            System.out.println("Invalid input! ERROR: "+e );
+        }
+
+
     }
 
     public static void swapWithThirdVar( int var1, int var2){
