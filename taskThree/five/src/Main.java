@@ -10,7 +10,7 @@ public class Main {
 
         int sum =0;
         for(int i=0;i<Long.toString(numLong).length();i++){
-            sum+=Integer.parseInt(String.valueOf(i));
+            sum+=Integer.parseInt(String.valueOf(Long.toString(numLong).charAt(i)));
         }
         System.out.println("total: "+sum);
     }
